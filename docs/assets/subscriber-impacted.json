@@ -1,0 +1,18 @@
+[
+    {
+        "epochTime": 1679356800000,
+        "impactedSubscriberCnt": 0.0
+    },
+    {
+        "epochTime": 1679443200000,
+        "impactedSubscriberCnt": 1.0
+    },
+    {
+        "epochTime": 1679529600000,
+        "impactedSubscriberCnt": 4.0
+    },
+    {
+        "epochTime": 1679616000000,
+        "impactedSubscriberCnt": 8.0
+    }
+]

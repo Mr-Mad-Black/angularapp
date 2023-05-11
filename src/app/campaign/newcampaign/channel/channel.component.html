@@ -1,0 +1,98 @@
+    <p style="color: red;">{{errorMessage}}</p>
+<table >
+    <thead>
+        <tr  >
+            <th>
+                <input type="checkbox"  id="allclickcheck" [(ngModel)]="masterSelected" (change)="selectall($event.target,event)" >
+            </th>
+            <th>Channel</th>
+            <th>Segment Size</th>
+            <th>Includes in Channel</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+
+    <tbody id="ckk">
+        <tr  *ngFor="let items of list"  >
+            <td>
+                <input type="checkbox" id="tabss"   [(ngModel)]="items.checked" (change)="selectsingle($event.target,items)"  *ngIf="items.marketingChannel =='Mobile Notification' && mobile== 0 ? false:true" [value]="items.marketingChannel" >
+            </td>
+            
+            <td >
+               {{items.marketingChannel}}
+            </td>
+
+            <td>
+                <span *ngIf="items.marketingChannel=='Mobile Notification'">
+                   {{mobile}}
+                </span>
+                <span *ngIf="items.marketingChannel !=='Mobile Notification'">
+                <p>{{nonmobile}}</p>
+                 </span>
+               
+            </td>
+
+            <td>
+                <span  *ngIf="!items.checked" >-</span>
+                <div *ngIf="items.checked && items.marketingChannel==='Facebook' || items.marketingChannel==facebook" >
+                    <select class="form-select" aria-label="Default select example" >
+                        <option selected>All({{nonmobile}})</option>
+                        <option value="1" >Non-Mobile Message{{mobile-nonmobile}}</option>
+                        
+                      </select>
+                     </div>
+                     <div *ngIf="items.checked && items.marketingChannel==='ConstantContact' || items.marketingChannel==ConstantContact " >
+                        <select class="form-select" aria-label="Default select example" >
+                            <option selected>All({{nonmobile}})</option>
+                            <option value="1" >Non-Mobile Message{{mobile-nonmobile}}</option>
+                            
+                          </select>
+                         </div>
+                         <div *ngIf="items.checked && items.marketingChannel==='Mailchimp' || items.marketingChannel==Mailchimp" >
+                            <select class="form-select" aria-label="Default select example" >
+                                <option selected>All({{nonmobile}})</option>
+                                <option value="1" >Non-Mobile Message{{mobile-nonmobile}}</option>
+                                
+                              </select>
+                             </div>
+                             <div *ngIf="items.checked && items.marketingChannel==='Hubspot' || items.marketingChannel==Hubspot" >
+                                <select class="form-select" aria-label="Default select example" >
+                                    <option selected>All({{nonmobile}})</option>
+                                    <option value="1" >Non-Mobile Message{{mobile-nonmobile}}</option>
+                                    
+                                  </select>
+                                 </div>
+               
+                <span></span>
+            </td>
+            <td>
+                {{items.description}}
+            </td>
+
+          
+
+
+        </tr>
+        <tr *ngIf="Acq!='noMobileNot'">
+            <td><input type="checkbox" [(ngModel)]="checked" (change)="downloadCSV($event.target)"></td>
+            <td><p>Download CSV</p></td>
+            <td>{{nonmobile}}</td>
+            <td><span *ngIf="!checked">-</span>
+                <div  *ngIf="checked">
+                    <select class="form-select" aria-label="Default select example" >
+                        <option selected>All({{nonmobile}})</option>
+                        <option value="1" >Non-Mobile Message{{mobile-nonmobile}}</option>
+                        
+                      </select>
+                      </div>
+                    </td>
+            <td>Download a CSV file for use with other applications</td>
+        </tr>
+    </tbody>
+</table>
+
+
+
+
+
+

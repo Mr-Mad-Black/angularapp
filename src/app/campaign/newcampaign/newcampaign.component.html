@@ -1,0 +1,59 @@
+
+<div class="d-flex">
+	<div><h3>{{firstName}}</h3></div>
+	<div><button (click)="saveCamp(active_tab)">Save Campaign</button></div>
+
+</div>
+<hr>
+
+<div class="d-flex ">
+	<div ><h3>{{firstName}}</h3></div>
+	<div><button  class="btn btn-secondary mx-5" [ngClass]= "active==3 || active==4 || active==2 ? 'd-none':'d-block'" (click)="saveCamp(active_tab)">Save Campaign</button></div>
+	<div *ngIf="isSelect"><button class="btn btn-secondary mx-5" [ngClass]= "active==3 || active==4 || active==1 ? 'd-none':'d-block'" (click)="saveCamp1()">Save Campaign</button></div>
+</div>
+<ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs">
+	
+	<li [ngbNavItem]="1" [disabled]="one">
+		<button ngbNavLink (click)="fun1()">1 Define</button>
+		<ng-template ngbNavContent >
+			<div  [ngClass]="active_tab =='define' ?'true':'false'">
+  	<app-define (define)="definevalue($event)"  (NM)="NM($event)"(nameDefine)="nameDefine($event)" #Define  [finalvalue]="input"[savedOne]='segmentData1' [twoApiValue]="segmentData" ></app-define>
+	</div>
+</ng-template>
+	</li>
+
+    <li [ngbNavItem]="2" [disabled]="two">
+		<button ngbNavLink (click)="fun2()">2 Channel</button>
+		<ng-template ngbNavContent>
+			<div  [ngClass]="active_tab =='channel' ? 'true' : 'false'">
+			<app-channel [channel]="channalApi" (checkB)="check($event)" (select)="select($event)" (nameChennel)="nameChennel($event)" #channelView></app-channel>
+		</div>
+		</ng-template>
+	</li>
+
+	<li [ngbNavItem]="3" [disabled]="three">
+		<button ngbNavLink (click)="fun3()" >Deploy</button>
+		<ng-template ngbNavContent>
+			<div [ngClass]="active_tab =='deploy' ? 'true' : 'false'">
+            <app-deploy  [channel]="channalApi" (nameDeploy)="nameDeploy($event)" #Deploy></app-deploy>
+		</div>
+		</ng-template>
+	</li>
+	<li [ngbNavItem]="4" [disabled]="four">
+		<button ngbNavLink >4 Result</button>
+		<ng-template ngbNavContent>
+			<app-result [channel]="channalApi"></app-result>
+		</ng-template>
+	</li>
+	<li [ngClass]="active==1 || active==4? 'd-none':'d-block'">
+		<button (click)="previous(active_tab)"  class="btn btn-secondary mx-3">previous</button>
+	</li>
+	<li  [ngClass]="active==4 || active==3? 'd-none':'' ">
+		<button (click)="next(active_tab)" class="btn btn-primary mx-3">next</button>
+	</li>
+	<li  [ngClass]="active==3? 'd-block':'d-none'">
+		<button (click)="next(active_tab)" class="btn btn-primary mx-3">deploy campaign</button>
+	</li>
+</ul>
+
+<div [ngbNavOutlet]="nav" class="mt-2"></div>

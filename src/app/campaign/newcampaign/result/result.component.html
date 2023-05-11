@@ -1,0 +1,92 @@
+<ng-template #content let-modal>
+	<div class="modal-header">
+		<h4 class="modal-title" id="modal-basic-title">Re-Deploy {{reDeployName}}</h4>
+        
+		<button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+	</div>
+    <p>The following action will be executed</p>
+	<li>Send segment to {{reDeployName}}. This action may take up to 60 minutes.</li>
+	<div class="modal-footer">
+		<button type="button" class="btn btn-outline-dark" (click)="reDeployAll()">Re-Deploy</button>
+        <button type="button" class="btn btn-outline-dark" (click)="modal.dismiss('Cross click')">Cancel</button>
+    </div>
+</ng-template>
+
+
+
+<hr />
+
+
+
+
+<p>result works!</p>
+<div>
+    <div class="row">
+        <div class="col">
+            <p>Segment</p>
+            <h4>{{Segment}}</h4>
+        </div>
+        <div class="col-2">
+            <p>Audience</p>
+            <h4>1</h4>
+        </div>
+        <div class="col-2">
+            <p>Start Date</p>
+            <h4>{{StartDate}}</h4>
+        </div>
+        <div class="col-2">
+            <p>End Date</p>
+            <h4>{{EndDate}}</h4>
+        </div>
+        <div class="col-2">
+            <p>Conversion Rate</p>
+            <h4>{{ConversionRate}}</h4>
+        </div>
+        <div class="col-2">
+            <p>Budget</p>
+            <h4>{{Budget}}</h4>
+        </div>
+
+    </div>
+
+
+
+    <div class="row" >
+        <div class="col-sm-3" *ngIf="compareChannel.includes('Mailchimp')">
+            <h1>Mailchimp</h1>
+            <hr>
+            <p>Deployment Status</p>
+            <!-- (click)="Mailchimp()" -->
+            <button  *ngIf="arr.includes('Mailchimp'); else elseBlock1" class="btn btn-danger" (click)="open('Mailchimp')">Redeploy</button>
+            <ng-template #elseBlock1><h4 class="text-success">In process</h4></ng-template>
+        </div>
+
+        <div class="col-sm-3" *ngIf="compareChannel.includes('Hubspot')">
+            <h1>HubSpot</h1>
+            <hr>
+            <!-- <p>Deployment Status</p>(click)="Hubspot()" -->
+            <button *ngIf="arr.includes('Hubspot') ; else elseBlock2" class="btn btn-danger" (click)="open('Hubspot')" >Redeploy</button>
+            <ng-template #elseBlock2 ><h4 class="text-success">In process</h4></ng-template>
+        </div>
+
+        <div class="col-sm-3" *ngIf="compareChannel.includes('ConstantContact')">
+            <h1>Constant Contact</h1>
+            <!-- (click)="ConstantContact()" -->
+            <hr>
+            <p>Deployment Status</p>
+            <button *ngIf="arr.includes('ConstantContact'); else elseBlock3" class="btn btn-danger" (click)="open('ConstantContact')">Redeploy</button>
+            <ng-template #elseBlock3 ><h4 class="text-success">In process</h4></ng-template>   
+        </div>
+
+        
+        <div class="col-sm-3" *ngIf="compareChannel.includes('Facebook')">
+            <h1>Facebook</h1>
+            <!-- <hr>(click)="Facebook() -->
+            <p>Deployment Status</p>
+            <button *ngIf="arr.includes('Facebook'); else elseBlock4"  class="btn btn-danger"(click)="open('Facebook')" >Redeploy</button>
+            <ng-template #elseBlock4 ><h4 class="text-success">In process</h4></ng-template>
+        </div>
+
+    </div>
+
+</div>

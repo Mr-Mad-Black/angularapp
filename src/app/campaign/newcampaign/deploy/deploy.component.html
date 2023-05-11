@@ -1,0 +1,67 @@
+<p>deploy works!</p>
+<div class="Mailchimp" *ngIf="listToShow.includes('Mailchimp')">
+    <h1>Mailchimp</h1>
+    <hr>
+    <p> <b>{{deployValue}}</b> will be deployed to Mailchimp when you click "Deploy Campaign". <br>
+        Electronic Content Builder can help you to design your collateral for use in Mailchimp.</p>
+</div>
+
+    <div class="Facebook" *ngIf='listToShow.includes("Facebook")' >
+        <h1>Facebook</h1>
+        <hr>
+        <p> <b>{{deployValue}}</b>will be deployed to Facebook when you click "Deploy Campaign" <br>
+            Electronic Content Builder can help you to design your collateral for use in Facebook.</p>
+        </div>
+
+
+        <div class="Hubspot"   *ngIf='listToShow.includes("Hubspot")'>
+            <h1>HubSpot</h1>
+            <hr>
+            <p> <b>{{deployValue}}</b>will be deployed to Hubspot when you click "Deploy Campaign". <br>
+                Electronic Content Builder can help you to design your collateral for use in HubSpot.</p>
+            </div>
+
+
+            <div class="CSV Download"   *ngIf="listToShow.includes('download Csv')">
+            <h1>CSV Download</h1>
+            <hr>
+            <p> <b>{{deployValue}}</b>CSV file will be downloaded when you click "Deploy Campaign"..</p>
+            </div>
+
+
+            <div class="ConstantContact" *ngIf="listToShow.includes('ConstantContact')">
+                <h1>Constant Contact</h1>
+                <hr>
+                <p> <b>{{deployValue}}</b>will be deployed to Constant Contact when you click "Deploy Campaign". <br>
+                    Electronic Content Builder can help you to design your collateral for use in Constant Contact..</p>
+                </div>
+
+
+
+
+
+                <ng-template #content let-modal>
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="modal-basic-title">Deploy Campaign</h4>
+                        
+                        <!-- <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button> -->
+                    </div>
+                    <h5>The following actions will be executed</h5>
+
+                    <p *ngIf="listToShow.includes('Mailchimp')">Send segment to Mailchimp. This action may take up to 60 minutes</p>
+                    <p *ngIf="listToShow.includes('download Csv')">Download CSV file</p>
+                    <p  *ngIf='listToShow.includes("Hubspot")'>Send segment to Hubspot. This action may take up to 60 minutes</p>
+                    <p *ngIf='listToShow.includes("Facebook")'>Send segment to Facebook. This action may take up to 60 minutes</p>
+                    <p *ngIf="listToShow.includes('ConstantContact')">Send segment to Constant Contact. This action may take up to 60 minutes</p>
+                    <div class="modal-body">
+                        
+                     
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Cancel</button>
+                        <button type="button" class="btn btn-outline-dark" (click)="save()">Deploy Campaign</button>
+                    </div>
+                    
+                </ng-template>
+
+

@@ -1,0 +1,109 @@
+<p style="color: red;">{{sameCamapignNameError}}</p>
+    <div>
+        <label for="">Campaign Name</label>
+        <input type="text" placeholder="Campaign Name"  (ngModelChange)="campaignNameChange($event)" [(ngModel)]="camName" >
+    </div>
+   <p style="color: red;">{{camNameErr}}</p> 
+   <p style="color: red;">{{camNameErr1}}</p>
+   
+<!-- <p *ngIf="segNameValue"> {{segNameValue}}</p> -->
+    <div class="w-75">
+        <label>Segment</label>
+        <ng-select  placeholder="Select Segment" (ngModelChange)="segValue($event)" [clearable]="false"  [(ngModel)]="segNameValue" [virtualScroll]="true" [searchable]="true">
+            <!-- segmentValues replace -->
+
+            <ng-option [disabled]="true"><b>RECOMMENDED</b></ng-option>
+            <ng-option  *ngFor="let Segment of segmentData1" [value]="Segment">
+              
+                <div class="d-flex segment">
+                    
+<p>{{Segment.segmentName}}</p>
+<p>{{Segment.segmentType}}</p>
+</div>
+
+            </ng-option>
+            <ng-option [disabled]="true"><b>SAVED</b></ng-option>
+            <ng-option  *ngFor="let Segment of segmentData2" [value]="Segment">
+                
+                <div class="d-flex segment">
+                    
+<p>{{Segment.segmentName}}</p>
+<p>{{Segment.segmentType}}</p>
+</div>
+            </ng-option>
+        </ng-select>
+      
+
+    </div>
+    <p style="color: red;">{{segmentError}}</p>
+
+
+    <div  *ngIf="show">
+
+        
+        <div >
+            <label for="">Region</label>
+            <ng-select placeholder="" [(ngModel)]="Select" [clearable]="false">
+                <ng-option selected >All</ng-option>
+            </ng-select>
+        </div>
+
+        <div>
+            <label for="">Location</label>
+            <ng-select placeholder="" [(ngModel)]="Select"  [clearable]="false">
+                <ng-option selected='true'>All</ng-option>
+            </ng-select>
+        </div>
+
+        <div>
+            <label for="">Service</label>
+            <ng-select placeholder="" [(ngModel)]="Select"  [clearable]="false">
+                <ng-option selected>All</ng-option>
+            </ng-select>
+        </div>
+
+        <div>
+            <label for="">Propensity</label>
+            <ng-select placeholder="" [(ngModel)]="Select"  [clearable]="false">
+                <ng-option selected>All</ng-option>
+            </ng-select>
+        </div>
+    </div>
+
+    <div class="mb-10px">
+        <label for="">Budget($)</label>
+        <input type="text"   (ngModelChange)="campaignBudget($event)" (keypress)="Budget($event)" [(ngModel)]="budget">
+    </div>
+   
+    <div>
+        <label for=""> Conversion Target (%)</label>
+        <input type="text"    (ngModelChange)="campaignPercentage($event)"  (keyup)="per($event)" [(ngModel)]="percentage">
+    </div>
+    <p style="color: red;">{{targetError}}</p> 
+   
+
+        <!-- <div>
+            <label>End</label>
+            <p-calendar [style]="{'width': '15%','height': '36px'  }" [(ngModel)]="value" [showIcon]="true"></p-calendar>
+            </div> -->
+            <div>
+                <label>Start</label>
+                <p-calendar [style]="{'width': '30%','height': '36px'  }"  [showIcon]="true" [minDate]="currentDate" (ngModelChange)="startDate($event)" [(ngModel)]="startDay" dateFormat='dd-mm-yy'></p-calendar>
+                </div>
+                <p style="color: red;">{{startDateError}}</p>
+                
+
+                <div>
+                    <label>End</label>
+                    <p-calendar [style]="{'width': '30%','height': '36px'  }"  [showIcon]="true" [minDate]="startDay ? startDay: currentDate"  (ngModelChange)="endedtDate($event)" [(ngModel)]="endDay" dateFormat='dd-mm-yy'></p-calendar>
+                    </div>
+                    <p style="color: red;">{{endDateError}}</p>
+                   
+                    
+
+
+   
+
+
+
+

@@ -1,0 +1,81 @@
+
+
+<div class="d-flex">
+  <div class="w-25">
+    <label for="">Type</label>
+<ng-select  [(ngModel)]="campaignType" (ngModelChange)="filter()"
+  [items]="type" [ngModelOptions]="{standalone: true}" bindLabel="name" bindValue="name"
+  [clearable]="false">
+</ng-select>
+</div>
+
+<div class="w-25">
+  <label for="">Status</label>
+  <ng-select [(ngModel)]="campaignStatus" (ngModelChange)="filter()" [items]="status"
+   [ngModelOptions]="{standalone: true}" bindLabel="name" bindValue="name"   [clearable]="false"></ng-select>
+</div>
+</div>
+
+
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title"> Delete Campaign</h4>
+  </div>
+  <p>Are you sure you want to delete this campaign? This cannot be undone.</p>
+
+  <div class="modal-body">
+
+
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Cancel</button>
+    <button type="button" class="btn btn-outline-dark" (click)="yes()">Delete Campaign</button>
+  </div>
+
+</ng-template>
+<ng-template #deleted>
+<h1>Deleted sucessfully</h1>
+</ng-template>
+<div class="d-flex">
+  <div>
+<button (click)="next()" class="btn btn-primary mx-3"><a routerLink="/campaign/newcampaign" routerLinkActive="active" style="color: white;">new Campaign</a></button>
+</div>
+<div>
+<button (click)="next()" class="btn btn-secondary mx-3"><a routerLink="/highCharts" routerLinkActive="active" style="color: white;">HIGH CHARTS</a></button>
+</div>
+</div>
+<table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Status</th>
+      <th>Type</th>
+      <th>Segment</th>
+      <th>Audience Size</th>
+      <th>Start Date</th>
+      <th>End Date</th>
+      <th>Budget</th>
+      <th></th>
+    </tr>
+
+  </thead>
+
+  <tbody>
+
+    <tr *ngFor="let value of filteredValues">
+      <td>{{value.name}}</td>
+      <td>{{value.status}}</td>
+      <td>{{value.segmentType}}</td>
+      <td>{{value.segmentName}}</td>
+      <td>{{value.segmentSize}}</td>
+      <td>{{value.startDate}}</td>
+      <td>{{value.endDate}}</td>
+      <td>${{value.budget}}</td>
+      <td><button (click)="edit(value)" *ngIf="value.status=='In-Progress' ||value.status=='Draft' "><img
+            src="../../../assets/net-edit.svg"></button>
+           
+            <button (click)="delete(value)" *ngIf="value.status=='Draft'" ><img src="../../../assets/net-delete.svg"></button></td>
+    </tr>
+
+  </tbody>
+</table>

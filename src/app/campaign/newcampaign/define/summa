@@ -1,0 +1,16 @@
+<div class="col">
+        <br/>
+        <div ngbDropdown  aria-labelledby=true>
+          <button type="button" id="gfg" 
+                  ngbDropdownToggle >segment</button>
+          <div ngbDropdownMenu>
+            
+            <span>Recommeded</span>
+            <button type="button" ngbDropdownItem *ngFor="let val of Recommeded">
+                {{val.segmentName}} <span>{{val.segmentType}}</span></button>
+            <span>Saved</span>
+            <button type="button" ngbDropdownItem *ngFor="let val of saved">{{val.segmentName}}</button>
+            
+          </div>
+        </div>
+      </div>

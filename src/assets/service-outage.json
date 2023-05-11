@@ -1,0 +1,30 @@
+[
+    {
+        "epochtime": 1679097600000,
+        "count": 12
+    },
+    {
+        "epochtime": 1679184000000,
+        "count": 12
+    },
+    {
+        "epochtime": 1679270400000,
+        "count": 11
+    },
+    {
+        "epochtime": 1679356800000,
+        "count": 10
+    },
+    {
+        "epochtime": 1679443200000,
+        "count": 6
+    },
+    {
+        "epochtime": 1679529600000,
+        "count": 9
+    },
+    {
+        "epochtime": 1679616000000,
+        "count": 12
+    }
+]

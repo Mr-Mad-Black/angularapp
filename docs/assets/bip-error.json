@@ -1,0 +1,144 @@
+[
+    {
+        "regionId": "122a3972-08bf-43b3-a414-ce3c8e090465",
+        "count": 1,
+        "updateTime": 1679627724,
+        "region": "Texas"
+    },
+    {
+        "regionId": "2c7326e6-d49d-4af2-985f-5a0b815abebb",
+        "count": 1,
+        "updateTime": 1673925593,
+        "region": "XGS SOAK"
+    },
+    {
+        "regionId": "34a91963-3404-41c1-9afc-a1f65047be87",
+        "count": 1,
+        "updateTime": 1674206332,
+        "region": "CDC Lab"
+    },
+    {
+        "regionId": "910e0032-1cb7-4105-a5a1-40f4db4c7018",
+        "count": 2,
+        "updateTime": 1679565186,
+        "region": "California"
+    },
+    {
+        "regionId": "af3fcd61-8dc2-44d4-9847-96f8a27e542d",
+        "count": 3,
+        "updateTime": 1679478201,
+        "region": "CDC"
+    },
+    {
+        "regionId": "b20faa25-ea07-48ca-98ca-162fe990390a",
+        "region": "Texas"
+    },
+    {
+        "regionId": "b460a631-ec06-4dd4-8cca-cba5ca49d72b",
+        "region": "test_0902"
+    },
+    {
+        "regionId": "68533987-311f-4de7-9859-307b218d435a",
+        "region": "Default"
+    },
+    {
+        "regionId": "dbb1100e-2d53-4fc9-b9f2-90abea0c0837",
+        "region": "xqiao"
+    },
+    {
+        "regionId": "66fcb3fb-a2b6-4ee7-bd95-0d868ee309dc",
+        "region": "floria"
+    },
+    {
+        "regionId": "a37c3a9f-ff59-46d9-b293-415d962618ee",
+        "region": "Default"
+    },
+    {
+        "regionId": "39729a48-396c-40df-99cd-b8bb830ca890",
+        "region": "Eric_AXOS"
+    },
+    {
+        "regionId": "ab5a2546-f368-45fc-9b33-1662dc01ba09",
+        "region": "Smallwall_AXOS"
+    },
+    {
+        "regionId": "3f669f0a-04c1-4a13-b971-0a675fd56dae",
+        "region": "NKG"
+    },
+    {
+        "regionId": "e20633cb-5901-4dad-bb3b-6bc936ad12d4",
+        "region": "E9_CDC"
+    },
+    {
+        "regionId": "a8231994-2707-494b-85a1-c11695e1e96a",
+        "region": "Default"
+    },
+    {
+        "regionId": "b069a8d3-d493-4fb1-94dc-c89325172f9f",
+        "region": "test"
+    },
+    {
+        "regionId": "700e87a5-42ef-45dc-a4da-87ba429719a1",
+        "region": "CDC_XGS"
+    },
+    {
+        "regionId": "bea89645-6721-4847-836a-0ba10764c16b",
+        "region": "California"
+    },
+    {
+        "regionId": "37f89b75-b296-4e2d-a2c4-1f6f610b6e8c",
+        "region": "anne"
+    },
+    {
+        "regionId": "d8e4ea09-3913-4c80-b727-4d1dca64ccb2",
+        "region": "Default"
+    },
+    {
+        "regionId": "c95bc9fb-ad5c-4f9a-a5d7-5f720eee7973",
+        "region": "US"
+    },
+    {
+        "regionId": "a08cfd63-2fd6-42ab-bb2f-b5d203fcefc7",
+        "region": "XGS_SOAK"
+    },
+    {
+        "regionId": "529a4503-f796-4d48-a457-35c4684cd8c8",
+        "region": "CDC_Lab_3"
+    },
+    {
+        "regionId": "81ae7d82-399b-4f41-b69d-fe5db8cf6f99",
+        "region": "Jing_E9"
+    },
+    {
+        "regionId": "58dc5a54-2817-4e18-a56e-5a1c92df8746",
+        "region": "hubert_test_region"
+    },
+    {
+        "regionId": "2a01c781-8374-4605-82e8-5a4f313447f7",
+        "region": "harris_dexun"
+    },
+    {
+        "regionId": "d10ce65c-9526-4173-a467-103804d66336",
+        "region": "CDC_Lab_2"
+    },
+    {
+        "regionId": "147b10b0-9fc1-403a-84b5-d0bd0ffd85f2",
+        "region": "Florida"
+    },
+    {
+        "regionId": "ddae88dc-7e86-41b9-8c52-dba1856d772c",
+        "region": "TEST_VIJAY"
+    },
+    {
+        "regionId": "ff6ff38d-f0f4-4eee-893c-a3b136334473",
+        "region": "Cytheria_Test"
+    },
+    {
+        "regionId": "8861e8ce-b023-48d7-a00d-a8a8cdda101c",
+        "region": "NEW_REG"
+    },
+    {
+        "regionId": "19beebf0-8535-402d-bee8-071a5c38e0b6",
+        "region": "S93"
+    }
+]
